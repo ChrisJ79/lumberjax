@@ -1,0 +1,76 @@
+
+body {
+	background: url(../images/logstack.jpeg) no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+    /*box-sizing: border-box;
+    text-align: center;*/
+
+}
+
+.buttons {
+    /*text-align: center;*/
+    height: 200px;
+    width: 450px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 6px;
+}
+
+.logbox {
+    /*position: absolute;*/
+    text-align: center;
+    margin: 35px auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+.regbox {
+    /*position: absolute;;*/
+    text-align: center;
+    margin: 35px auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+
+
+
+.logbtn {
+    background-color: #7c4e20;
+	text-align: center;
+	height: 46px;
+	width: 122px;
+	color: white;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border: 1px solid transparent;
+    border-radius: 6px;
+	margin-bottom: 25px;
+    opacity: 1;
+
+}
+
+
+.regbtn {
+    background-color: darkorange;
+	text-align: center;
+	height: 46px;
+	width: 122px;
+	color: white;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border: 1px solid transparent;
+    border-radius: 6px;
+	margin-bottom: 25px;
+}

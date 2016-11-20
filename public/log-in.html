@@ -1,0 +1,86 @@
+
+<!-- log-in html page -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Log-in Page</title>
+        <!--css/log-in.css-->
+        <link rel="stylesheet" href="css/log-in.css">
+        <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
+        <!--bootstrap.css(cdn)-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css"></link>
+        <!--jquery.js/cdn-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js" type="text/javascript"></script>
+        <!--bootstrap.js/cdn-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js" type="text/javascript"></script>
+
+        </script>
+    </head>
+    <body>
+        <!-- Buttons each trigger a modal -->
+        <div class="buttons">
+            <div class="logbox">
+                <button type="button" class="btn btn-lg logbtn" data-toggle="modal" data-target="#myModal-1">"LOG" In!</button>
+            </div>
+            <div class="regbox">
+                <button type="button" class="btn btn-lg regbtn" data-toggle="modal" data-target="#myModal-2">Register </button>
+            </div>
+        </div>
+
+        <!-- Modal #1 -->
+        <div class="modal fade" id="myModal-1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                  <h1>Please Log in to your account to get started on your quote</h1>
+                  <form class="" action="index.html" method="post">
+                      <label for="">E-mail Address</label>
+                      <input type="text" name="email-address" value="">
+                      <label for="">Password</label>
+                      <input type="text" name="password" value="">
+                      <button type="submit" name="log-in">Log-In</button>
+                      <!-- what goes here for 'forgot email or password? -->
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal #2 -->
+        <div class="modal fade" id="myModal-2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+              </div>
+              <div class="modal-body">
+                  <h1>Register here to create an account!</h1>
+                  <form class="" action="index.html" method="post">
+                      <label for="">E-mail Address</label>
+                      <input type="text" name="email-address" value="">
+                      <label for="">Password</label>
+                      <input type="text" name="password" value="">
+                      <button type="submit" name="log-in">Log-In</button>
+                      <!-- what goes here for 'forgot email or password? -->
+                  </form>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    </body>
+</html>
