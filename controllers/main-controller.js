@@ -6,7 +6,8 @@ var Model = require('./models/model.js');
 // Send info to the database
 
 app.put('/', function (req, res) {
-  res.sendFile('');
+  res.sendFile('File Sent!!');
+  console.log('Success!!');
 });
 
 

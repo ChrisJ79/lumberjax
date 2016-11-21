@@ -8,7 +8,7 @@ var Auth = require('./controllers/auth-controller.js');
 // });
 
 //authentication route
-app.put('/', function (req, res) {
+app.put('/', function (req, res, next) {
   res.sendFile('');
 });
 

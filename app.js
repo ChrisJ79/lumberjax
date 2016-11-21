@@ -6,6 +6,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
 var PORT = process.env.PORT || 3000;
 var Routes = require('./routes/main-routes.js');
 var Users = require('./routes/auth-routes.js');
@@ -35,7 +36,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', Routes);
-app.use('/users', users);
+app.use('/users', Users);
 
 // ROOT ROUTE
 app.get('/', function(req, res) {
