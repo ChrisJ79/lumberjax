@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 //Schema structure
 var authSchema = mongoose.Schema({
     user : {
+        // role : {type : Number, defined as 0 for builder, and 1 for lumberyard.};
         role : {type : Number, required : true},
         name : {type : String, required : true},
         emailAddress : {type : String, default : 'me@something.com'},
@@ -15,7 +16,7 @@ var authSchema = mongoose.Schema({
     },
 
 
-    // role : {type : Number, required : true (0,1)};
+
 
     // What else needs to go here?
 

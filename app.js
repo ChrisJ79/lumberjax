@@ -7,8 +7,8 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var PORT = process.env.PORT || 3000;
-var Routes = require('./routes/routes.js');
-var Users = require('./routes/users.js');
+var Routes = require('./routes/main-routes.js');
+var Users = require('./routes/auth-routes.js');
 
 
 // 2) Create an variable that will Express to set up Middleware
@@ -36,6 +36,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', Routes);
 app.use('/users', users);
+
+// ROOT ROUTE
+app.get('/', function(req, res) {
+    res.sendFile("index.html", { root: './public/html' });
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
