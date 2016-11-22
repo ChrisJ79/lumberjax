@@ -1,6 +1,6 @@
 
 body {
-	background: url(../images/logstack.jpeg) no-repeat center center fixed;
+	background: url(../images/sawblades.jpeg) no-repeat center center fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -24,8 +24,8 @@ body {
     border-radius: 6px;
 }
 
-.logbox {
-    /*position: absolute;*/
+.regbox {
+    /*position: absolute;;*/
     text-align: center;
     margin: 35px auto;
     top: 0;
@@ -37,7 +37,7 @@ body {
 
 
 
-.logbtn {
+/*.logbtn {
     background-color: #7c4e20;
 	text-align: center;
 	height: 46px;
@@ -49,10 +49,10 @@ body {
     border-radius: 6px;
 	margin-bottom: 25px;
     opacity: 1;
+}*/
 
-}
 
-/*.regbtn {
+.regbtn {
     background-color: darkorange;
 	text-align: center;
 	height: 46px;
@@ -63,7 +63,7 @@ body {
     border: 1px solid transparent;
     border-radius: 6px;
 	margin-bottom: 25px;
-}*/
+}
 
 .text {
 	margin-top: 25px;

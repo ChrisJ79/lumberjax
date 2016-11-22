@@ -783,9 +783,18 @@ h3 {
 
 
 .get-quote {
-	margin-top: 50px;
+
 	text-align: center;
+	height: 300px;
+
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
 	clear: both;
+
+	padding: 40px 30px;
+	text-decoration: none;
 }
 
 .my-btn {
