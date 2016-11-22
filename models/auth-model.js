@@ -11,9 +11,9 @@ var bcrypt = require('bcryptjs');
 var authSchema = mongoose.Schema({
     user : {
         // role : {type : Number, defined as 0 for builder, and 1 for lumberyard.};
-        role : {type : Number, required : true},
+        role : {type : Number, required : true, unique : true},
         name : {type : String, required : true},
-        emailAddress : {type : String, default : 'me@something.com'},
+        emailAddress : {type : String, default : 'me@something.com', unique : true},
         password : {type : String, required : true},
     },
 

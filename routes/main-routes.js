@@ -1,12 +1,35 @@
 var express = require('express');
 // var router = express.Router();
-var MainCtrl = require('../controllers/main-controller.js');
+// var MainCtrl = require('../controllers/main-controller.js');
 // var Auth = require('../controllers/auth-controller.js');
 
 
 
 
 module.exports = (app) => {
+
+
+//routing for log-in.html
+app.get('/', (req, res) => {
+    res.sendFile("log-in.html", {
+        root: './public/html'
+    });
+});
+
+// app.post("/login", Auth.login);
+// app.post("/logout", Auth.logout);
+
+
+//routing for register.html
+app.get('/', (req, res) => {
+    res.sendFile("register.html", {
+        root: './public/html'
+    });
+});
+
+
+
+
 
 //routing for index.html
 app.get('/', (req, res) => {
@@ -71,21 +94,6 @@ app.get('/', (req, res) => {
     });
 });
 
-
-//routing for log-in.html
-app.get('/', (req, res) => {
-    res.sendFile("log-in.html", {
-        root: './public/html'
-    });
-});
-
-
-//routing for register.html
-app.get('/', (req, res) => {
-    res.sendFile("register.html", {
-        root: './public/html'
-    });
-});
 
 
 };
