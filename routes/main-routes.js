@@ -1,7 +1,9 @@
 var express = require('express');
-// var router = express.Router();
+
 // var MainCtrl = require('../controllers/main-controller.js');
 // var Auth = require('../controllers/auth-controller.js');
+// var Mail  = require('../controllers/email-controller.js');
+
 
 
 
@@ -26,9 +28,6 @@ app.get('/', (req, res) => {
         root: './public/html'
     });
 });
-
-
-
 
 
 //routing for index.html
