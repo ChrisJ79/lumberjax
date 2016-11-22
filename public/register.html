@@ -5,9 +5,9 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Log-in Page</title>
+        <title>Register</title>
         <!--css/log-in.css-->
-        <link rel="stylesheet" href="css/log-in.css">
+        <link rel="stylesheet" href="css/register.css">
         <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
         <!--bootstrap.css(cdn)-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet" type="text/css"></link>
@@ -25,8 +25,8 @@
                 <button type="button" class="btn btn-lg logbtn" data-toggle="modal" data-target="#myModal-1">"LOG" In!</button>
             </div> -->
             <div class="regbox">
-                <button type="button" class="btn btn-lg regbtn" data-toggle="modal" data-target="#myModal-2">Register </button>
-                <p><a href="#">Back</a></p>
+                <button type="button" class="btn btn-lg regbtn" data-toggle="modal" data-target="#myModal-2">Register</button>
+                <p class="text"><a href="log-in.html">Back</a></p>
             </div>
         </div>
 
@@ -62,16 +62,16 @@
             <div class="modal-content">
               <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                <h4 class="modal-title" id="myModalLabel">Please register to start your account!</h4>
               </div>
               <div class="modal-body">
-                  <h1>Register here to create an account!</h1>
+                  <h2>Are you:  A) A Builder or B) A Supplier (Check One)</h2>
                   <form class="" action="index.html" method="post">
                       <label for="">E-mail Address</label>
                       <input type="text" name="email-address" value="">
                       <label for="">Password</label>
                       <input type="text" name="password" value="">
-                      <button type="submit" name="log-in">Log-In</button>
+                      <button type="submit" name="log-in">Register</button>
                       <!-- what goes here for 'forgot email or password? -->
                   </form>
               </div>
