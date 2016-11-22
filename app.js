@@ -9,7 +9,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-var Routes = require('./routes/main-routes.js');
+var Routes = require('./main-routes.js');
 
 var PORT = process.env.PORT || 3000;
 
@@ -20,20 +20,15 @@ var app = express();
 
 
 // 3) Configure the app to listen on Port 3000
-var server = app.listen(app.get('port'), function() {
-  var port = server.address().port;
-  console.log('You, sir, are getting served on port: ' + port);
-});
+// var server = app.listen(app.get('port'), function() {
+//   var port = server.address().port;
+//   console.log('You, sir, are getting served on port: ' + port);
+// });
 
 
 // MIDDLEWARE
 
 
-//Root Route(?)
-app.get('/', (req, res, next) => {
-    res.sendFile('index.html', {root:"."});
-    console.log("Success!");
-});
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -45,6 +40,7 @@ app.use(express.static('public'));
 app.use(sessions({
   cookieName: 'quote-session', // cookie name dictates the key name added to the request object
   secret: 'no16u3ssth15', // encryption password (long unguessable string )
+  requestKey: 'session',
   duration: 24 * 60 * 60 * 1000, // how long the session will stay valid in ms
   cookie: {
     ephemeral: false,
@@ -53,7 +49,7 @@ app.use(sessions({
 }
 }));
 
-app.use('/', Routes);
+
 
 
 //Connect with Mongoose
@@ -65,13 +61,13 @@ Routes(app);
 module.exports = app;
 
 
-// app.listen(PORT, (err) => {
-//     if(err) {
-//         console.log("Server Error", err);
-//         process.exit(1);
-//     }
-//     console.log("Server is up listening to port "+ PORT);
-// });
+app.listen(PORT, (err) => {
+    if(err) {
+        console.log("Server Error", err);
+        process.exit(1);
+    }
+    console.log("Server is up listening to port "+ PORT);
+});
 
 
 // catch 404 and forward to error handler

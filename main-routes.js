@@ -1,45 +1,64 @@
 var express = require('express');
-
-// var MainCtrl = require('../controllers/main-controller.js');
+var Auth = require('./controllers/auth');
+var MainCtrl = require('./controllers/main-controller.js');
 // var Auth = require('../controllers/auth-controller.js');
 // var Mail  = require('../controllers/email-controller.js');
-
-
-
 
 
 module.exports = (app) => {
 
 
 //routing for log-in.html
-app.get('/', (req, res) => {
-    res.sendFile("log-in.html", {
+app.get('/login', (req, res) => {
+    res.sendFile("auth.html", {
         root: './public/html'
     });
 });
+app.get('/register', (req, res) => {
+    res.sendFile("auth.html", {
+        root: './public/html'
+    });
+});
+
+// app.get('/auth', (req, res) => {
+//     res.sendFile("auth.html", {
+//         root: './public/html'
+//     });
+// });
 
 // app.post("/login", Auth.login);
 // app.post("/logout", Auth.logout);
+app.get('/logout', Auth.logout); // route for logging out
+app.post('/login', Auth.login); // form request emdpoint for loggin in
+app.post('/register', Auth.register); // form request endpoint for user registration
 
 
 //routing for register.html
+// app.get('/register', (req, res) => {
+//     res.sendFile("register.html", {
+//         root: './public/html'
+//     });
+// });
+
+
+//Log-In Page
 app.get('/', (req, res) => {
-    res.sendFile("register.html", {
+    res.sendFile("auth.html", {
         root: './public/html'
     });
 });
 
+//Everything below this line is protected:
 
-//routing for index.html
-app.get('/', (req, res) => {
+app.all('/index*', Auth.session);
+
+app.get('/index', (req, res) => {
     res.sendFile("index.html", {
         root: './public/html'
     });
 });
-
-
 //routing for index-2.html
-app.get('/', (req, res) => {
+app.get('/index2', (req, res) => {
     res.sendFile("index-2.html", {
         root: './public/html'
     });
@@ -47,7 +66,7 @@ app.get('/', (req, res) => {
 
 
 //routing for index-3.html
-app.get('/', (req, res) => {
+app.get('/index3', (req, res) => {
     res.sendFile("index-3.html", {
         root: './public/html'
     });
@@ -55,15 +74,15 @@ app.get('/', (req, res) => {
 
 
 //routing for index-4.html
-app.get('/', (req, res) => {
+app.get('/index4', (req, res) => {
     res.sendFile("index-4.html", {
         root: './public/html'
     });
 });
 
-
+app.all('/email*', Auth.session);
 //routing for email.html
-app.get('/', (req, res) => {
+app.get('/email', (req, res) => {
     res.sendFile("email.html", {
         root: './public/html'
     });
@@ -71,7 +90,7 @@ app.get('/', (req, res) => {
 
 
 //routing for email-2.html
-app.get('/', (req, res) => {
+app.get('/email2', (req, res) => {
     res.sendFile("email-2.html", {
         root: './public/html'
     });
@@ -79,7 +98,7 @@ app.get('/', (req, res) => {
 
 
 //routing for email-3.html
-app.get('/', (req, res) => {
+app.get('/email3', (req, res) => {
     res.sendFile("email-3.html", {
         root: './public/html'
     });
@@ -87,13 +106,14 @@ app.get('/', (req, res) => {
 
 
 //routing for email-4.html
-app.get('/', (req, res) => {
+app.get('/email4', (req, res) => {
     res.sendFile("email-4.html", {
         root: './public/html'
     });
 });
 
-
+app.get('/quotes/:id', MainCtrl.getQuote);
+app.post('/quotes', MainCtrl.saveQuote);
 
 };
 

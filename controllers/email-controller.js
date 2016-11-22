@@ -2,32 +2,33 @@ var express = require('express');
 
 //step1 -- done
 var nodemailer = require('nodemailer');
+var dotenv = require('dotenv').config();
 
 //step2
 var router = express.Router();
 app.use('/sayHello', router);
-router.post('/', handleSayHello); // handle the route at yourdomain.com/sayHello
+router.post('/', handleSayHello); // handle the route at yourdomain.com/sayHello (Site Needs to be deployed first??)
 
 function handleSayHello(req, res) {
     var transporter = nodemailer.createTransport({
-        service: 'Gmail',
+        service: 'gmail',
         auth: {
-            user: 'example@gmail.com', // Your email id
-            pass: 'password' // Your password
+            user: 'cjohnsonswp@gmail.com', // Your email id
+            pass: process.env.timberPW // Your password (Email password)
         }
     });
 
 }
 
 //step3
-var text = 'Hello world from \n\n' + req.body.name;
+var text = 'Hello world from Chris!' + req.body.name;
 
 
 //step4
 var mailOptions = {
-    from: 'example@gmail.com>', // sender address
-    to: 'receiver@destination.com', // list of receivers
-    subject: 'Email Example', // Subject line
+    from: 'cjohnsonswp@gmail.com', // sender address
+    to: 'csjohnson79@icloud.com', // list of receivers
+    subject: 'You have a new email...  A new LumberJax quote awaits!', // Subject line
     text: text //, // plaintext body
     // html: '<b>Hello world ✔</b>' // You can choose to send an HTML body instead
 };
