@@ -1,5 +1,5 @@
 
-var authModel = require('./models/auth.js');
+var authModel = require('./models/authmodel.js');
 
 
 

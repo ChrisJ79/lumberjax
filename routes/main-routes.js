@@ -1,8 +1,12 @@
 var express = require('express');
 // var router = express.Router();
 var MainCtrl = require('./controllers/main-controller.js');
+var Auth = require('./controllers/auth-controller.js');
 
-
+//authentication route
+app.put('/', function (req, res, next) {
+  res.sendFile('');
+});
 
 //1) builder creates initial quote request, sends to lumberyard
 app.post('/', function (req, res, next) {
@@ -51,4 +55,21 @@ app.put('/', function (req, res, next) {
 
 
 //???????
+// module.exports = router;
+
+/***********************************************************/
+
+
+//??
+// var router = express.Router();
+
+/* GET users listing. */
+// router.get('/', function(req, res, next) {
+//   res.send('respond with a resource');
+// });
+
+
+
+
+//??
 // module.exports = router;
