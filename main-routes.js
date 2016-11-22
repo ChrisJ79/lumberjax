@@ -2,11 +2,13 @@ var express = require('express');
 var Auth = require('./controllers/auth');
 var MainCtrl = require('./controllers/main-controller.js');
 // var Auth = require('../controllers/auth-controller.js');
-// var Mail  = require('../controllers/email-controller.js');
+var Mail  = require('../controllers/email-controller.js');
 
 
 module.exports = (app) => {
 
+
+app.post('/emailToLumberYard', Mail.emailToLumberYard);
 
 //routing for log-in.html
 app.get('/login', (req, res) => {
@@ -49,8 +51,8 @@ app.get('/', (req, res) => {
 });
 
 //Everything below this line is protected:
-
 app.all('/index*', Auth.session);
+
 
 app.get('/index', (req, res) => {
     res.sendFile("index.html", {
