@@ -2,7 +2,7 @@ var express = require('express');
 var Auth = require('./controllers/auth');
 var MainCtrl = require('./controllers/main-controller.js');
 // var Auth = require('../controllers/auth-controller.js');
-var Mail  = require('../controllers/email-controller.js');
+var Mail  = require('./controllers/email-controller.js');
 
 
 module.exports = (app) => {

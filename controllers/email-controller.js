@@ -1,5 +1,6 @@
 var nodemailer = require('nodemailer');
 var dotenv = require('dotenv').config();
+var fs = require('fs');
 
 module.exports = {
     emailToLumberYard: emailToLumberYard
@@ -8,12 +9,14 @@ module.exports = {
 function emailToLumberYard(req, res) {
 
   console.log("The req body" ,req.body)
+  var file = fs.readFileSync(__dirname + '/../public/html/email.html', 'utf8');
+  console.log("File contents: ", file);
 
     var transporter = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
             user: 'cjohnsonswp@gmail.com', // Your email id
-            pass: process.env.emailPW // Your password
+            pass: 'scanning'//process.env.emailPW // Your password
         }
     });
 
@@ -21,7 +24,8 @@ function emailToLumberYard(req, res) {
         from: req.body.email, // sender address
         to: 'csjohnson79@icloud.com', // list of receivers
         subject: 'New Suggestion From: ' +req.body.email, // Subject line
-        text: req.body.message,
+        //text: file //req.body.message,
+        html: file
     };
 
     transporter.sendMail(mailOptions, function(error, info){

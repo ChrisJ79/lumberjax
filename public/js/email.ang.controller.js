@@ -8,7 +8,7 @@ eCtrl.$inject = ['$http'];
 
 function eCtrl($http) {
     var send = this;
-    
+
     send.submit = function() {
         console.log("Sending an Email!!")
 
@@ -16,7 +16,7 @@ function eCtrl($http) {
             method: 'POST',
             url: '/emailToLumberYard',
             data: {
-
+                message: 'Yoooooo!!!!!'
             },
         }).then(function(res) {
                 console.info(res.data);
