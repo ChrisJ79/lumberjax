@@ -10,16 +10,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Routes = require('./routes/main-routes.js');
+
 var PORT = process.env.PORT || 3000;
 
 
 // 2) Create an variable that will Express to set up Middleware
 var app = express();
 
-// 3) Define the port to run on
-app.set('port', 3001);
 
-// 4) Configure the app to listen on Port 3000
+
+// 3) Configure the app to listen on Port 3000
 var server = app.listen(app.get('port'), function() {
   var port = server.address().port;
   console.log('You, sir, are getting served on port: ' + port);
@@ -28,13 +28,20 @@ var server = app.listen(app.get('port'), function() {
 
 // MIDDLEWARE
 
-// uncomment after placing your favicon in /public
+
+//Root Route(?)
+app.get('/', (req, res, next) => {
+    res.sendFile('index.html', {root:"."});
+    console.log("Success!");
+});
+
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
 app.use(sessions({
   cookieName: 'quote-session', // cookie name dictates the key name added to the request object
   secret: 'no16u3ssth15', // encryption password (long unguessable string )
@@ -47,7 +54,7 @@ app.use(sessions({
 }));
 
 app.use('/', Routes);
-app.use('/users', Users);
+
 
 //Connect with Mongoose
 mongoose.connect('mongodb://localhost/lumberjax');
@@ -55,19 +62,16 @@ mongoose.connect('mongodb://localhost/lumberjax');
 
 Routes(app);
 
-
-
-// ROOT ROUTE
-app.get('/', function(req, res) {
-    res.send("index.html", { root: './public/html' });
-});
-
 module.exports = app;
 
 
-app.listen(PORT, () => {
-    console.log('Server is running on PORT:', PORT);
-});
+// app.listen(PORT, (err) => {
+//     if(err) {
+//         console.log("Server Error", err);
+//         process.exit(1);
+//     }
+//     console.log("Server is up listening to port "+ PORT);
+// });
 
 
 // catch 404 and forward to error handler

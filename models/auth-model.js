@@ -4,6 +4,8 @@
 
 //require mongoose
 var mongoose = require('mongoose');
+var bcrypt = require('bcryptjs');
+
 
 //Schema structure
 var authSchema = mongoose.Schema({
@@ -24,4 +26,4 @@ var authSchema = mongoose.Schema({
 
 
 //??
-module.exports = mongoose.model('???', authSchema, '???');
+module.exports = mongoose.model('User', authSchema, 'users');
