@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Routes = require('./main-routes.js');
 
-// var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 3000;
 
 
 // 2) Create an variable that will Express to set up Middleware
@@ -35,8 +35,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static('public'));
 app.use(sessions({
   cookieName: 'quote-session', // cookie name dictates the key name added to the request object
   secret: 'no16u3ssth15', // encryption password (long unguessable string )
@@ -61,30 +61,10 @@ Routes(app);
 module.exports = app;
 
 
-// app.listen(PORT, (err) => {
+app.listen(PORT, (err) => {
     if(err) {
         console.log("Server Error", err);
         process.exit(1);
     }
     console.log("Server is up listening to port "+ PORT);
 });
-
-
-// catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   var err = new Error('Not Found');
-//   err.status = 404;
-//   next(err);
-// });
-
-// error handler
-// app.use(function(err, req, res, next) {
-//   // set locals, only providing error in development
-//   res.locals.message = err.message;
-//   res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-
-  // render the error page
-//   res.status(err.status || 500);
-//   res.render('error');
-// });
