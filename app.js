@@ -11,7 +11,7 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Routes = require('./main-routes.js');
 
-var PORT = process.env.PORT || 80;
+var PORT = process.env.PORT || 3000;
 
 
 // 2) Create an variable that will Express to set up Middleware
