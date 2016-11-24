@@ -21,6 +21,8 @@
                 <!--.js files-->
         <script src="js/module.js" type="text/javascript"></script>
         <script src="js/main.controller.js" type="text/javascript"></script>
+        <script src="js/email.ang.controller.js" type="text/javascript"></script>
+
         <script src="js/app.js" type="text/javascript"></script>
     </head>
 
@@ -30,6 +32,7 @@
         <nav>
             <div>
                 <img class="top-pic" src="images/black-cabin.png">
+                <a href="/logout" class="btn btn-lg btn-danger">Logout</a>
             </div>
         </nav>
 
@@ -320,8 +323,13 @@
                     </tr>
                 </table>
             </div>
+<<<<<<< HEAD:public/index.html
             <div class="get-quote">
                 <a href="mailto:csjohnson79@icloud.com"><button ng-click="" type="button" class="my-btn">Get Quote!</button></a>
+=======
+            <div ng-controller="ECtrl as eCtrl" class="get-quote">
+                <button ng-click="eCtrl.submit()" type="submit" class="my-btn">Get Quote!</button>
+>>>>>>> master:public/html/index.html
             </div>
         </section>
     </body>

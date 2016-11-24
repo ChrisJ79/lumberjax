@@ -1,15 +1,15 @@
 
-var authModel = require('./models/auth.js');
-
+// var express = require('express');
+// var authModel = require('../models/auth-model.js');
 
 
 
 // Send info to the database
 
-app.put('/', function (req, res) {
-    res.sendFile('File Sent!!');
-    console.log('Success!!');
-});
+// app.put('/', function (req, res) {
+//     res.sendFile('File Sent!!');
+//     console.log('Success!!');
+// });
 
 
 
