@@ -10,7 +10,7 @@ function eCtrl($http) {
     var send = this;
 
     send.submit = function() {
-        console.log("Sending an Email!!")
+        console.log("Sending an Email!!");
 
         $http({
             method: 'POST',
@@ -20,8 +20,6 @@ function eCtrl($http) {
             },
         }).then(function(res) {
                 console.info(res.data);
-
-
             },
 
             function(err) {
