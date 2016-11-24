@@ -23,7 +23,7 @@ function emailToLumberYard(req, res) {
     var mailOptions = {
         from: req.body.email, // sender address
         to: 'csjohnson79@icloud.com', // list of receivers
-        subject: 'New Suggestion From: ' +req.body.email, // Subject line
+        subject: 'You Have A New Quote Request!! ' +req.body.email, // Subject line
         //text: file //req.body.message,
         html: file
     };
@@ -40,7 +40,7 @@ function emailToLumberYard(req, res) {
 
 }
 
-
+// function emailToBuilder(req, res) {};
 
 
 
