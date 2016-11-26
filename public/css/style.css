@@ -131,11 +131,10 @@ nav {
 }
 
 #form-override textarea {
-	font-size: 36px;
+	font-size: 24px;
 	height: 104px;
 	font-family: lumberFont;
 	letter-spacing: 0.6px;
-
 }
 
 input {
