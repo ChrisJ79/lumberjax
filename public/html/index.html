@@ -31,16 +31,22 @@
     <body ng-cloak="" ng-controller="TimberCtrl as timber">
         <nav>
             <div>
-                <img class="top-pic" src="images/black-cabin.png">
-                <a href="/logout" class="btn btn-lg btn-danger">Logout</a>
+                <div class="logoutbox">
+                    <a href="/logout" class="btn btn-lg logout-btn">Logout</a>
+                </div>
+                <div class="">
+                    <h1 class="appnameheader">LumberjaX</h1>
+                </div>
+
+                <img class="top-pic" src="images/whitetip-crossaxe-copy.png">
             </div>
         </nav>
 
 <!-- CUSTOMER INFO SECTION -->
 
-        <h1 class="cust-header">CUSTOMER INFO</h1>
+        <h1 class="section-header">CUSTOMER INFO</h1>
         <section class="cust-info center">
-            <form action="" class="form-horizontal left-input">
+            <form id="form-override" action="" class="form-horizontal left-input">
                 <div class="control-group name">
                     <div class="controls">
                         <label class="control-label" for=""></label>
@@ -66,7 +72,7 @@
                     </div>
                 </div>
             </form>
-            <form action="" class="form-horizontal right-input">
+            <form id="form-override" action="" class="form-horizontal right-input">
                 <div class="control-group">
                     <div class="controls">
                         <label class="control-label" for=""></label>
@@ -76,20 +82,20 @@
                 <div class="control-group">
                     <div class="controls">
                         <label class="control-label" for=""></label>
-                        <input class="input6 input-lg focusedInput" type="text" name="Customer Email" placeholder="Quote delivered to:">
+                        <input class="input6 input-lg focusedInput" type="text" name="Delivery Details" placeholder="Quote delivered to:">
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="controls">
                         <label class="control-label" for=""></label>
-                        <textarea class="input7 input-lg focusedInput" type="text" name="Notes" placeholder="Enter All Notes & Details Here!"></textarea>
+                        <textarea class="input7 input-lg focusedInput" type="text" name="Notes" placeholder="Enter Any Important Notes & Details Here!"></textarea>
                     </div>
                 </div>
             </form>
         </section>
 
 <!-- TIMBER INFO SECTION -->
-
+        <h1 class="section-header">TIMBER INFO</h1>
         <section class="timber-info center">
             <div class="optionselect">
                     <select class=" dropbtn1 input-lg dropfocus" ng-options="type as type for type in timber.species" ng-model="timber.newSpecies">
@@ -102,21 +108,21 @@
                         <option value="" disabled selected>Moisture</option>
                     </select>
             </div>
-            <form class="quantity" action="">
-                    <div class="control-group">
-                        <div class="left-tim-input">
-                            <label class="control-label" for=""></label>
-                            <input class="input11 input-lg focusedInput" ng-model="timber.newSize" id="timber-entry" type="text" name="Timber Size Entry" placeholder="Enter Timber Size">
-                            <h1 ng-repeat="size in timber.sizes track by $index">{{size}}</h1>
-                        </div>
-                        <div class="right-tim-input">
-                            <label class="control-label" for=""></label>
-                            <input class="input12 input-lg focusedInput" ng-model="timber.newQuantity" type="text" name="Timber Quantity Entry" placeholder="Enter Quantity">
-                            <h1 ng-repeat="quantity in timber.qty track by $index">{{quantity}}</h1>
-                        </div>
+            <form id="form-override" class="quantity" action="">
+                <div class="control-group timberinputbox">
+                    <div class="left-tim-input">
+                        <label class="control-label" for=""></label>
+                        <input class="input11 input-lg focusedInput" ng-model="timber.newSize" id="timber-entry" type="text" name="Timber Size Entry" placeholder="Enter Timber Size">
+                        <h1 ng-repeat="size in timber.sizes track by $index">{{size}}</h1>
                     </div>
-                <div class="add-button-div">
-                    <button ng-click="timber.addTimber()" type="reset" class="my-btn">Add Timber</button>
+                    <div class="right-tim-input">
+                        <label class="control-label" for=""></label>
+                        <input class="input12 input-lg focusedInput" ng-model="timber.newQuantity" type="text" name="Timber Quantity Entry" placeholder="Enter Quantity">
+                        <h1 ng-repeat="quantity in timber.qty track by $index">{{quantity}}</h1>
+                    </div>
+                    <div class="add-button-div">
+                        <button ng-click="timber.addTimber()" type="reset" class="add-btn">Add Timber</button>
+                    </div>
                 </div>
             </form>
         </section>
@@ -277,15 +283,15 @@
             <div class="populate-table table-responsive">
                 <table class="table">
                     <tr>
-                        <th align="center" width="3%"><h3><small></small></h3></th>
-                        <th ng-click="timber.sorter('line')" align="center" width="2%"><h3><small>Line</small></h3></th>
+                        <th align="center" width="1%"><h3><small></small></h3></th>
+                        <th ng-click="timber.sorter('line')" align="center" width="1.5%"><h3><small>Line</small></h3></th>
                         <th ng-click="timber.sorter('item')" align="center" width="10%"><h3><small>Item</small></h3></th>
-                        <th ng-click="timber.sorter('quantity')" align="center" width="2%"><h3><small>Qty</small></h3></th>
-                        <th align="center" width="4%"><h3><small>Board Feet</small></h3></th>
+                        <th ng-click="timber.sorter('quantity')" align="center" width="3%"><h3><small>Qty</small></h3></th>
+                        <th align="center" width="2.5%"><h3><small>Board Feet</small></h3></th>
                         <th align="center" width="2%"><h3><small>In Stock</small></h3></th>
-                        <th align="center" width="4%"><h3><small>Price</small></h3></th>
-                        <th align="center" width="5%"><h3><small>Total</small></h3></th>
-                        <th align="center" width="5%"><h3><small>Sub-Total</small></h3></th>
+                        <th align="center" width="2.5%"><h3><small>Price</small></h3></th>
+                        <th align="center" width="2%"><h3><small>Total</small></h3></th>
+                        <th align="center" width="2%"><h3><small>Sub-Total</small></h3></th>
                     </tr>
 
             <!-- hardcoded table data -->
@@ -311,20 +317,20 @@
                     </tr> -->
 
                     <tr ng-repeat="timber in timber.woodList | orderBy : timber.sort : timber.desc">
-                        <td width="3%" class="edit-del small"><h3><a href=""><small>edit&nbsp;</small></a><a href=""><small>&nbsp;delete</small></h3></a></td>
-                        <td width="2%" class=""><h3>{{$index+1}}</h3></td>
+                        <td width="1%" class=""><h3><a href="">&#10006</a></h3></td>
+                        <td width="1.5%" class=""><h3>{{$index+1}}</h3></td>
                         <td width="10%" class=""><h3>{{timber.size}} {{timber.species}}</h3></td>
-                        <td width="2%" class=""><h3>{{timber.quantity}}</h3></td>
-                        <td width="4%" class=""><h3>5333.33</h3></td>
+                        <td width="3%" class=""><h3>{{timber.quantity}}</h3></td>
+                        <td width="2.5%" class=""><h3>5333.33</h3></td>
                         <td width="2%" class=""><h3>Y</h3></td>
-                        <td width="4%" class=""><h3>$2500/m</h3></td>
-                        <td width="5%" class=""><h3>$13,333.33</h3></td>
-                        <td width="5%" class=""><h3>$13,333.33</h3></td>
+                        <td width="2.5%" class=""><h3>$2500/m</h3></td>
+                        <td width="2%" class=""><h3>$13,333.33</h3></td>
+                        <td width="2%" class=""><h3>$13,333.33</h3></td>
                     </tr>
                 </table>
             </div>
             <div ng-controller="ECtrl as eCtrl" class="get-quote">
-                <button ng-click="eCtrl.submit()" type="submit" class="my-btn">Get Quote!</button>
+                <button id="form-override" ng-click="eCtrl.submit()" type="submit" class="order-btn">Get Quote!</button>
             </div>
         </section>
     </body>

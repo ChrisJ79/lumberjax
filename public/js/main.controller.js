@@ -12,7 +12,7 @@ angular.module("MyApp")
     	timber.woodList = [];
 		timber.species = ["#2/Btr. West Red Cedar", "#1/Btr. Douglas Fir"];
 		timber.texture = ["Rough-Sawn", "S4S", "Resawn/Sawsized", "Hand-Hewn", "Wire-Brushed", "Hand-Hewn & Wirebrushed"];
-		timber.moisture = ["Green", "Kiln-Dried"];
+		timber.moisture = ["Green (+20% Moisture Content)", "Kiln-Dried"];
 
 
 

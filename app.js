@@ -11,19 +11,13 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var Routes = require('./main-routes.js');
 
+//Create a variable for the port.
 var PORT = process.env.PORT || 3000;
 
 
 // 2) Create an variable that will Express to set up Middleware
 var app = express();
 
-
-
-// 3) Configure the app to listen on Port 3000
-// var server = app.listen(app.get('port'), function() {
-//   var port = server.address().port;
-//   console.log('You, sir, are getting served on port: ' + port);
-// });
 
 
 // MIDDLEWARE
@@ -60,7 +54,7 @@ Routes(app);
 
 module.exports = app;
 
-
+// Configure the app to listen on Port 3000
 app.listen(PORT, (err) => {
     if(err) {
         console.log("Server Error", err);
