@@ -3,6 +3,7 @@
 'use strict';
 
 // Board Footage Calculator Code
+
 // var calculateBF = function() {
 //     var height = 4;
 //     var width = 8;
@@ -14,7 +15,10 @@
 // };
 // console.log(calculateBF);
 
+
+
 // Function to assign variables to various parts of the inputted string that will be calculated to display the BF via //angular.
+
 var fffTimber = function() {
     // var str = "";
     var heightNum = str.charAt(0) + str.charAt(1) + 'x';
@@ -25,8 +29,20 @@ var fffTimber = function() {
     var total = heightNum + widthNum + lengthNum + quantityNum;
     document.getElementById("output").innerHTML = str;
 
-
 //
 // function myFunction() {
 //
 };
+
+
+
+// For Importing a link onto my email.html page (containing the link to index.html or ideally index-2.html) --?????
+
+/*function myFunction() {
+    var x = document.getElementById("myLink").href;
+    document.getElementById("demo").innerHTML = x;
+}
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p> */

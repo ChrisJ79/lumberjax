@@ -21,6 +21,7 @@
                 <!--.js files-->
         <script src="js/module.js" type="text/javascript"></script>
         <script src="js/main.controller.js" type="text/javascript"></script>
+        <!-- <script src="js/r.controller.js" type="text/javascript"></script> -->
         <script src="js/email.ang.controller.js" type="text/javascript"></script>
 
         <script src="js/app.js" type="text/javascript"></script>
@@ -50,22 +51,22 @@
                 <div class="control-group name">
                     <div class="controls">
                         <label class="control-label" for=""></label>
-                        <input class="input1 input-lg focusedInput" type="text" name="Customer Name" placeholder="Enter Customer Name" autofocus="">
+                        <input ng-model="timber.customerName" class="input1 input-lg focusedInput" type="text" name="Customer Name" placeholder="Enter Customer Name" autofocus="">
                     </div>
                 </div>
                 <div class="control-group job-name">
                     <div class="controls">
                         <label class="control-label" for=""></label>
-                        <input class="input2 input-lg focusedInput" type="text" name="Job Name" placeholder="Enter Job Name">
+                        <input ng-model="timber.jobName" class="input2 input-lg focusedInput" type="text" name="Job Name" placeholder="Enter Job Name">
                     </div>
                 </div>
                 <div class="control-group contact-name">
                     <div class="controls">
                         <label class="control-label" for=""></label>
-                        <input class="input3 input-lg focusedInput" type="text" name="Contact Name" placeholder="Contact Name">
+                        <input ng-model="timber.contactName" class="input3 input-lg focusedInput" type="text" name="Contact Name" placeholder="Contact Name">
                     </div>
                 </div>
-                <div class="control-group contact-phone">
+                <div ng-model="timber.contactPhoneNumber" class="control-group contact-phone">
                     <div class="controls">
                         <label class="control-label" for=""></label>
                         <input class="input4 input-lg focusedInput" type="text" name="Contact Phone Number" placeholder="Contact Phone Number">
@@ -76,19 +77,19 @@
                 <div class="control-group">
                     <div class="controls">
                         <label class="control-label" for=""></label>
-                        <input class="input5 input-lg focusedInput" type="text" name="Customer Email" placeholder="Enter Email Address">
+                        <input ng-model="timber.returnEmailAddress" class="input5 input-lg focusedInput" type="text" name="Customer Email" placeholder="Enter Email Address">
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="controls">
                         <label class="control-label" for=""></label>
-                        <input class="input6 input-lg focusedInput" type="text" name="Delivery Details" placeholder="Quote delivered to:">
+                        <input ng-model="timber.quoteJobDeliveredTo" class="input6 input-lg focusedInput" type="text" name="Delivery Details" placeholder="Quote delivered to:">
                     </div>
                 </div>
                 <div class="control-group">
                     <div class="controls">
                         <label class="control-label" for=""></label>
-                        <textarea class="input7 input-lg focusedInput" type="text" name="Notes" placeholder="Enter Any Important Notes & Details Here!"></textarea>
+                        <textarea ng-model="timber.notes" class="input7 input-lg focusedInput" type="text" name="Notes" placeholder="Enter Any Important Notes & Details Here!"></textarea>
                     </div>
                 </div>
             </form>
@@ -318,19 +319,20 @@
 
                     <tr ng-repeat="timber in timber.woodList | orderBy : timber.sort : timber.desc">
                         <td width="1%" class=""><h3><a href="">&#10006</a></h3></td>
-                        <td width="1.5%" class=""><h3>{{$index+1}}</h3></td>
-                        <td width="10%" class=""><h3>{{timber.size}} {{timber.species}}</h3></td>
-                        <td width="3%" class=""><h3>{{timber.quantity}}</h3></td>
-                        <td width="2.5%" class=""><h3>5333.33</h3></td>
-                        <td width="2%" class=""><h3>Y</h3></td>
-                        <td width="2.5%" class=""><h3>$2500/m</h3></td>
-                        <td width="2%" class=""><h3>$13,333.33</h3></td>
-                        <td width="2%" class=""><h3>$13,333.33</h3></td>
+                        <td ng-model="timber.lineNumber" width="1.5%" class=""><h3>{{$index+1}}</h3></td>
+                        <td ng-model="timber.newSize" width="10%" class=""><h3>{{timber.size}} {{timber.species}}</h3></td>
+                        <td ng-model="timber.newQuantity" width="3%" class=""><h3>{{timber.quantity}}</h3></td>
+                        <td ng-model="timber.boardFeet" width="2.5%" class=""><h3>5333.33</h3></td>
+                        <td ng-model="timber.inStock" width="2%" class=""><h3>Y</h3></td>
+                        <td ng-model="timber.pricePerBF" width="2.5%" class=""><h3>$2500/m</h3></td>
+                        <td ng-model="timber.linePrice" width="2%" class=""><h3>$13,333.33</h3></td>
+                        <td ng-model="timber.subTotal" width="2%" class=""><h3>$13,333.33</h3></td>
                     </tr>
                 </table>
             </div>
             <div ng-controller="ECtrl as eCtrl" class="get-quote">
-                <button id="form-override" ng-click="eCtrl.submit()" type="submit" class="order-btn">Get Quote!</button>
+                <button id="form-override" ng-click="timber.saveToModel()" type="submit" class="order-btn">Get Quote!</button>
+                <!-- <button id="form-override" ng-click="timber.saveToModel(); eCtrl.submit()" type="submit" class="order-btn">Get Quote!</button> -->
             </div>
         </section>
     </body>

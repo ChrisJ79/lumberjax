@@ -7,8 +7,11 @@ var Mail  = require('./controllers/email-controller.js');
 
 module.exports = (app) => {
 
-
+// route from email to lumberyard
 app.post('/emailToLumberYard', Mail.emailToLumberYard);
+
+// route from angular controller to back-end controller (which, then sends to Mongo)
+app.post('/saveToModel', MainCtrl.saveQuote);
 
 //routing for log-in.html
 app.get('/login', (req, res) => {
@@ -116,6 +119,8 @@ app.get('/email4', (req, res) => {
 
 app.get('/quotes/:id', MainCtrl.getQuote);
 app.post('/quotes', MainCtrl.saveQuote);
+
+
 
 };
 
