@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 angular.module("MyApp")
     .controller("TimberCtrl", timberCtrl);
@@ -63,12 +63,12 @@ function timberCtrl($http) {
 
                             function(err) {
                                 console.error(err);
-                            })
+                            });
                     }
                 };
                 eCtrl.submit();
             }, function(err) {
-                console.log(err);
+                // console.log(err);
             });
     };
 
