@@ -58,7 +58,7 @@ function timberCtrl($http) {
                                 message: 'Yoooooo!!!!!'
                             },
                         }).then(function(res) {
-                                console.info(res.data);
+                                console.log(res.data);
                             },
 
                             function(err) {
