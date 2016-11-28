@@ -36,7 +36,7 @@ function emailToLumberYard(req, res) {
   });
 
     var mailOptions = {
-        from: "cjohnsonswp@gmail.com", // sender address
+        from: "lumberjax66@gmail.com", // sender address
         to: "csjohnson79@icloud.com", // list of receivers
         subject: "You Have A New Quote Request!! " +req.body.email, // Subject line
         //text: file //req.body.message,
