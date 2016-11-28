@@ -30,13 +30,10 @@ function emailToLumberYard(req, res) {
   var smtpTransport = nodemailer.createTransport("SMTP", {
       service: 'gmail',
       auth: {
-          user: 'cjohnsonswp@gmail.com', // Your email id
-          pass: 'scanning'//process.env.emailPW // Your password
+          user: 'lumberjax66@gmail.com', // Your email id
+          pass: 'qmail888'//process.env.emailPW // Your password
       }
   });
-
-
-
 
     var mailOptions = {
         from: "cjohnsonswp@gmail.com", // sender address
@@ -54,7 +51,7 @@ function emailToLumberYard(req, res) {
         console.log('Message sent: ' + info.response);
         res.json({yo: info.response});
     }
-        smtpTransport.close();
+        // smtpTransport.close();
 });
 
 }
