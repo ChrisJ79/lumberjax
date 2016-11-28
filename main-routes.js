@@ -2,13 +2,13 @@ var express = require('express');
 var Auth = require('./controllers/auth');
 var MainCtrl = require('./controllers/main-controller.js');
 // var Auth = require('../controllers/auth-controller.js');
-var Mail  = require('./controllers/email-controller.js');
+var eMail  = require('./controllers/email-controller.js');
 
 
 module.exports = (app) => {
 
 // route from email to lumberyard
-app.post('/emailToLumberYard', Mail.emailToLumberYard);
+app.post('/emailToLumberYard', eMail.emailToLumberYard);
 
 // route from angular controller to back-end controller (which, then sends to Mongo)
 app.post('/saveToModel', MainCtrl.saveQuote);

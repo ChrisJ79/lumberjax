@@ -18,11 +18,7 @@ var PORT = process.env.PORT || 3000;
 // 2) Create an variable that will Express to set up Middleware
 var app = express();
 
-
-
 // MIDDLEWARE
-
-
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
