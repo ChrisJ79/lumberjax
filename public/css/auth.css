@@ -1,5 +1,35 @@
 body {
     margin-top: 40px;
+    text-align: center;
+    background: url(../images/sym-forest.jpeg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*h1 {
+    margin-right: 50px;
+}*/
+
+@font-face {
+	font-family: lumberFont;
+    src: url(../images/lumberjack-font/lumberjack-rough.otf);
+}
+
+.appnameheader {
+	color: rgba(255, 140, 0, 0.75);
+	margin-top: 25px;
+	/*margin-left: 84px;*/
+	/*color: darkorange;*/
+	/*color: brown;*/
+	font-family: lumberFont;
+	font-size: 132px;
+	letter-spacing: 12px;
+}
+
+.text-center {
+    color: white;
 }
 
 #tabs h1 {
@@ -7,12 +37,46 @@ body {
 }
 
 #tabs {
+    font-family: lumberFont;
+    letter-spacing: 0.6px;
     width: 480px;
     margin: 40px auto;
 }
 
 #tabs .tab-content {
+    font-family: lumberFont;
+    letter-spacing: 0.6px;
     padding: 40px;
-    border: 1px solid #dddddd;
+    /*border: 1px solid #dddddd;*/
     border-top: none;
+    font-size: 18px;
+
+}
+
+.log-btn {
+    background-color: dodgerblue;
+	text-align: center;
+	height: 46px;
+	width: 122px;
+	color: white;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border: 1px solid transparent;
+    border-radius: 6px;
+	font-family: lumberFont;
+	letter-spacing: 0.6px;
+}
+
+.reg-btn {
+    background-color: dodgerblue;
+	text-align: center;
+	height: 46px;
+	width: 122px;
+	color: white;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border: 1px solid transparent;
+    border-radius: 6px;
+	font-family: lumberFont;
+	letter-spacing: 0.6px;
 }

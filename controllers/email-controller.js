@@ -1,11 +1,12 @@
 // 1) npm install nodemailer
 // 2) Cre­at­e a trans­port object in route handler.
 var nodemailer = require('nodemailer');
-var wellknown = require('nodemailer-wellknown');
+// var wellknown = require('nodemailer-wellknown');
 var dotenv = require('dotenv').config();
 var fs = require('fs');
 
-var config = wellknown('Gmail');
+// var config = wellknown('Gmail');
+
 
 module.exports = {
     emailToLumberYard: emailToLumberYard
@@ -31,11 +32,14 @@ function emailToLumberYard(req, res) {
   // });
 
   var smtpTransport = nodemailer.createTransport("SMTP", {
-         service: 'Gmail',
+         service: 'gmail',
          auth: {
              user: 'lumberjax66@gmail', // Your email id
              pass: 'qmail888'//process.env.emailPW // Your password
          }
+        //  host: 'smtp.gmail.com',
+        //  port: 80,
+        //  secure: true
 
   });
 
@@ -44,7 +48,7 @@ function emailToLumberYard(req, res) {
 
     var mailOptions = {
         from: "lumberjax66@gmail.com", // sender address
-        to: "csjohnson79@icloud.com", // list of receivers
+        to: "csjohnson79@icloud.com, cjohnsonswp@gmail.com", // list of receivers
         subject: "You Have A New Quote Request!! " +req.body.email, // Subject line
         //text: file //req.body.message,
         html: file
