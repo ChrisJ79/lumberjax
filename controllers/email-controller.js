@@ -28,9 +28,9 @@ function emailToLumberYard(req, res) {
   // });
 
   var smtpTransport = nodemailer.createTransport("SMTP", {
-      service: 'gmail',
+      service: 'Gmail',
       auth: {
-          user: 'lumberjax66@gmail.com', // Your email id
+          user: 'lumberjax66@gmail', // Your email id
           pass: 'qmail888'//process.env.emailPW // Your password
       }
   });
