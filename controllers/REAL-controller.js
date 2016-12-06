@@ -18,7 +18,7 @@ function emailToLumberYard(req, res) {
         service: 'gmail',
         auth: {
             user: 'cjohnsonswp@gmail.com', // Your email id
-            pass: 'scanning'//process.env.emailPW // Your password
+            pass: ''//process.env.emailPW // Your password
         }
     });
 

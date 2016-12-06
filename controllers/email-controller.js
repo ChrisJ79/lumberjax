@@ -35,7 +35,7 @@ function emailToLumberYard(req, res) {
          service: 'gmail',
          auth: {
              user: 'lumberjax66@gmail', // Your email id
-             pass: 'qmail888'//process.env.emailPW // Your password
+             pass: ''//process.env.emailPW // Your password
          }
         //  host: 'smtp.gmail.com',
         //  port: 80,
