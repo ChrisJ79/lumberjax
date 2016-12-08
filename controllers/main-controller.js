@@ -7,11 +7,12 @@ var Quote = require('../models/model.js');
 
 module.exports = {
     getQuote: function(req, res) {
+        console.log("Looking for ", req.params.id);
         Quote.findOne({_id: req.params.id}, (err, doc) => {
             if(err){
                 res.send("Error retrieving quote: " + err);
             } else {
-                res.send("Found quote: "+  doc);
+                res.send(doc);
             }
         });
     },
@@ -23,9 +24,9 @@ module.exports = {
             } else {
                 res.send("Saved quote: "+ quote);
             }
-        })
+        });
     }
-}
+};
 
 
 

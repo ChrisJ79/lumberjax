@@ -10,7 +10,7 @@ module.exports = {
 
 function emailToLumberYard(req, res) {
 
-  console.log("The req body" ,req.body)
+  console.log("The req body" ,req.body);
   var file = fs.readFileSync(__dirname + '/../public/html/email.html', 'utf8');
   console.log("File contents: ", file);
 
@@ -37,7 +37,7 @@ function emailToLumberYard(req, res) {
     }else{
         console.log('Message sent: ' + info.response);
         res.json({yo: info.response});
-    };
+    }
 });
 
 }

@@ -16,7 +16,7 @@ function emailToLumberYard(req, res) {
 
   console.log("The req body" ,req.body);
   var file = fs.readFileSync(__dirname + '/../public/html/email.html', 'utf8');
-  console.log("File contents: ", file);
+  //console.log("File contents: ", file);
 
   // var smtpTransport = nodemailer.createTransport("SMTP", {
   //   service: "Gmail",
@@ -32,16 +32,18 @@ function emailToLumberYard(req, res) {
   // });
 
   var smtpTransport = nodemailer.createTransport("SMTP", {
-         service: 'gmail',
+         service: 'Gmail',
          auth: {
-             user: 'lumberjax66@gmail', // Your email id
-             pass: ''//process.env.emailPW // Your password
-         }
+             user: 'lumberjax66@gmail.com', // Your email id
+             pass: process.env.emailPW// Your password
+         },
+         debug: true
         //  host: 'smtp.gmail.com',
         //  port: 80,
         //  secure: true
 
   });
+  //smtpTransport.on('log', console.log);
 
 
 
@@ -55,12 +57,13 @@ function emailToLumberYard(req, res) {
     };
 
     smtpTransport.sendMail(mailOptions, function(error, info){
+        //console.log(process.env.emailPW);
     if(error){
         console.log(error);
-        res.json({yo: 'error'});
+        res.send(error);
     }else{
         console.log('Message sent: ' + info.response);
-        res.json({yo: info.response});
+        res.send(info);
     }
         // smtpTransport.close();
 });
